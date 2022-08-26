@@ -42,23 +42,6 @@ def on_game_post(request):
     return redirect('/on_game_get')
 
 
-# def on_game(request):
-#     quiz = Quiz.restore(request)
-#     if not quiz:
-#         return render(request, 'error.html')
-#
-#     answer = request.POST.get('answer')
-#     if answer:
-#         quiz.check_answer(answer)
-#
-#     try:
-#         question = quiz.get_question()
-#         quiz.save(request)
-#         return render(request, 'game.html', vars(question))
-#     except IndexError as x:
-#         return redirect('/finish')
-
-
 def finish(request):
     quiz = Quiz.restore(request)
     result = quiz.get_result()
