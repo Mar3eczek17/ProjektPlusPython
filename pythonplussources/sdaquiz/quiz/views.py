@@ -45,5 +45,5 @@ def on_game_post(request):
 def finish(request):
     quiz = Quiz.restore(request)
     result = quiz.get_result()
-    quiz.stop(request)
+    # quiz.stop(request)
     return render(request, 'finish.html', result)
